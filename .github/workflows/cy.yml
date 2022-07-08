@@ -3,7 +3,7 @@ name: Percy test
 on: [push]
 
 jobs:
-  cypress-run:
+  percy-run:
     runs-on: ubuntu-latest
     steps:
       - name: Percy Run
