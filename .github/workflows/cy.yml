@@ -1,9 +1,14 @@
-name: CI
-  build:
+name: Cypress Tests
+
+on: [push]
+
+jobs:
+  cypress-run:
     runs-on: ubuntu-latest
-      - uses: actions/checkout@v3
-      
-      # Build
-      
-      - name: Percy Test
-        run: npx @percy/cli snapshot _site/ # or any directory such as public/
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+        with:
+          start: npm run cy:run-ci
