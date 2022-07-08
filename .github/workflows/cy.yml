@@ -8,5 +8,4 @@ jobs:
     steps:
       - name: Percy Run
         uses: actions/checkout@v2
-        with:
-          start: npm run cy:snapshot
+        run: npm run cy:snapshot
