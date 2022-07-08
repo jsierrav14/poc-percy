@@ -1,14 +1,14 @@
 {
-  "name": "react-cypress-percy-sample",
+  "name": "poc-nordstrom",
   "version": "0.1.0",
-  "author": "Masaki Yoshiiwa",
+  "author": "POC Percy",
   "repository": {
     "type": "git",
-    "url": "https://github.com/masaiborg/react-cypress-percy-example.git"
+    "url": "https://github.com/jsierrav14/poc-percy"
   },
   "engines": {
     "node": ">=12",
-    "yarn": "^1.22.0"
+    "npm": "^1.22.0"
   },
   "dependencies": {
     "@testing-library/jest-dom": "5.11.10",
@@ -31,7 +31,7 @@
     "eject": "react-scripts eject",
     "cy:run": "cypress run",
     "cy:open": "cypress open",
-    "cy:snapshot": "percy exec -- yarn cy:run",
+    "cy:snapshot": "percy exec -- npm run cy:run",
     "cy:run-ci": "npx start-server-and-test start http-get://localhost:3000/ cy:snapshot"
   },
   "eslintConfig": {
