@@ -1,14 +1,9 @@
-name: Cypress Tests
-
-on: [push]
-
-jobs:
-  cypress-run:
+name: CI
+  build:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Cypress run
-        uses: cypress-io/github-action@v2
-        with:
-          start: npm run cy:run-ci
+      - uses: actions/checkout@v3
+      
+      # Build
+      
+      - name: Percy Test
+        run: npm run cy:run-ci # or any directory such as public/
