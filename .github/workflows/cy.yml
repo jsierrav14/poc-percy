@@ -1,4 +1,4 @@
-name: Cypress Tests
+name: Percy test
 
 on: [push]
 
@@ -9,4 +9,4 @@ jobs:
       - name: Percy Run
         uses: actions/checkout@v2
         with:
-          start: npm run cy:run-ci
+          start: npm run cy:snapshot
