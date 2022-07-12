@@ -1,16 +1,21 @@
 name: CI
-on: [push, pull_request]
+
+on:
+  pull_request:
+    branches:
+      - master
+
 jobs:
-  build:
+  CI_Workflow:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@main
-      - name: Install
-        run: npm i
-      - name: Cypress Install
-        run: npm i cypress @percy/cypress @percy/cli
-      - name: Percy Test
-        run: percy exec -- npm run cy:run
+      - uses: actions/checkout@v1
+      - name: npm Install
+        run: npm install
+      - name: npm Build
+        run: npm run build
+      - name: Percy
+        run: yarn percy snapshot ./public
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
