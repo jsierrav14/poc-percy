@@ -11,8 +11,6 @@ jobs:
       - name: Cypress Install
         run: npm i cypress @percy/cypress @percy/cli
       - name: Percy Test
-        uses: percy/exec-action@v0.3.1
-        with:
-          command: 'cypress run'
+        run: percy exec -- npm run cy:run
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
