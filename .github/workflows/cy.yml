@@ -16,6 +16,6 @@ jobs:
       - name: npm Build
         run: npm run build
       - name: Percy
-        run: yarn percy snapshot ./public
+        run: npm percy snapshot ./public
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
