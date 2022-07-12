@@ -10,7 +10,7 @@ jobs:
         run: npm i
       - name: Cypress Install
         run: npm i cypress @percy/cypress @percy/cli
-      - name: Cypress Install
+      - name: Building App
         run: npm run build
       - name: Percy Test
         uses: percy/exec-action@v0.3.1
